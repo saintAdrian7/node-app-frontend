@@ -22,7 +22,7 @@ export default function BlogPost({ post }) {
    
   const postId = post._id; 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/comments`, {
+      const response = await fetch(`/${process.env.REACT_APP_API_URL}/api/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ export default function BlogPost({ post }) {
   
   const handleLike = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/${post._id}/like`, {
+      const response = await fetch(`/${process.env.REACT_APP_API_URL}/api/posts/${post._id}/like`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
