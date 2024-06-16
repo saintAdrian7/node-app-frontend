@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+body{
+    font-family: 'Karla', sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../public/download3.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: bottom center; 
+    background-attachment: fixed;
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    top: 70%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 1px 1px 2px black;
+  }
+
+
+.content-container{
+    margin-top: 140px;
+    width: 100%;
+    
+}
+.message{
+    text-align: center;
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;   
+}
+.message2{
+    text-align: center;
+    position: absolute;
+    top: 80%;
+    left:37%;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;   
+}
+.post {
+    text-align: center;
+    width: 100%; /* or any specific width like 300px */
+    max-width: 600px;
+    box-sizing: border-box;
+    line-height: 1.2;
+    height: auto;
+    margin-top: 170px;
+    gap: 0px;
+    background-color: transparent;
+    
+    
+} 
+
+.post-content {
+    text-align: center;
+    width: 100%; /* or any specific width like 300px */
+    max-width: 600px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    white-space: normal;
+    box-sizing: border-box;
+    line-height: 1.2;
+    height: auto;
+    padding: 30px;
+    gap: 0px;
+    background-color: transparent;
+    color: #37474F;
+    border-radius: 15px;
+    box-shadow: 0 0 5px;
+    
+}   
+
+.post p{
+ font-size: 1.2rem;
+ line-height: 1.2;
+ font-weight: bold;
+ color:rgb(26, 24, 24)
+}
+.post h4{
+  text-align: start;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+.sign-btn{
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: auto;
+    border-radius: 15px;
+    color: lightgreen;
+    width: 100px;
+    background-image: linear-gradient(black, gray);
+}
+
+
+
+#sign-btn:hover{
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    background-color: white;
+    color: #dc3545;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 6px;
+
+
+}
+.right-bar-container {
+    height: 100vh;
+    width: 300px;
+    background-color: #00244FE0; 
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: -7%;
+    box-shadow: 0 0 10px black;
+    z-index: 1;
+    transform: translateX(250px);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+.sidebarContainer {
+    height: 100vh;
+    width: 250px;
+    background-color: #00244FE0; 
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 10px black;
+    z-index: 1;
+    transform: translateX(-250px);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+  }
+
+
+.right-bar-container.show{
+    transform: translateX(0); 
+}
+.sidebarContainer.show{
+transform: translateX(0); 
+}
+.hamburger-right-sidebar{
+    display: block; 
+    position: fixed;
+    z-index: 2;
+    top: 2%;
+    right:3%;
+    font-size: 1.5rem;      
+    cursor: pointer; 
+    color: rgb(29, 28, 28);
+   
+}
+
+
+.hamburger-sidebar{
+    display: block;
+    position: fixed;
+    top: 2%;
+    left: 3%;
+    z-index: 2;
+    font-size: 1.5rem;      
+    cursor: pointer; 
+    color: rgb(29, 28, 28);
+}
+.right-bar-container.show{
+    transform: translateX(-25%); 
+}
+.hamburger-sidebar :hover{
+    color: red;
+    font-size: 2rem;
+}
+
+.hamburger-right-sidebar :hover{
+    color: red;
+    font-size: 2rem;
+}
+
+.details{
+    display: flex;
+    margin-top: 0;
+    
+  }
+  
+  .author-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  .use{
+    display: flex;
+   
+    gap: 0;
+  }
+  
+  .username{
+    font-weight: 500rem;
+    font-size: 1rem;
+    color: #000000;
+    margin-top: 15px;
+    margin-left: 5px;
+  }
+
+  .buttons{
+   margin-left: 400px;
+   margin-top: 50px;
+   
+
+  }
+
+  .like-button{
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    margin-right: 20px;
+  }
+  .comment-button{
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+  }
+  span{
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .comment-form{
+    margin-top: 20px;
+  }
+  .comment-btn {
+    background-color: #2979ff;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-btn:hover {
+    background-color: #1e6dc7;
+  }
+  
+  .comment-btn:active {
+    background-color: #155b9e;
+  }
+  
+
+ .trending-post{
+border-radius: 50px;
+width: 257px;
+height: auto;
+background-image: url('../public/download3.jpg'); 
+background-size: cover; 
+background-repeat: no-repeat; 
+background-position: bottom center; 
+background-attachment: fixed;
+color:  #000000;   
+  }
+
+.trending-post li{
+  list-style: none;
+  text-align: center;
+  font-weight: bold;
+}
+.trending-post h4{
+  text-align: start;
+  margin-left: 30px;
+}
+
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  background-color: #bdbdbd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
