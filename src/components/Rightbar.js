@@ -51,7 +51,7 @@ export default function Rightbar({ posts = [], onDelete, onEdit }) {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch('/api/posts?sort=likes'); 
+                const response = await fetch(`/${process.env.REACT_APP_API_URL}/api/posts?sort=likes`); 
                 const json = await response.json();
                 if (response.ok) {
                     setTrendingPosts(json);
@@ -69,7 +69,7 @@ export default function Rightbar({ posts = [], onDelete, onEdit }) {
     React.useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch('/api/posts');
+                const response = await fetch(`/${process.env.REACT_APP_API_URL/api/posts}`);
                 const json = await response.json(); 
                 if (response.ok) { 
                   setTrendingPosts(json)

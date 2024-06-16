@@ -311,7 +311,8 @@ background-size: cover;
 background-repeat: no-repeat; 
 background-position: bottom center; 
 background-attachment: fixed;
-color:  #000000;   
+color:  #000000; 
+margin-top:20px;  
   }
 
 .trending-post li{
