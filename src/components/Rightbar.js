@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FaEdit, FaTrash, FaBars, FaTimes,FaEye } from 'react-icons/fa';
 import styles from './Sidebar.module.css';
 import { useContext } from "react";
-import { usePostContext } from "../Hooks/usePostContext";
+import { usePostContext } from "../Hooks/useAppContext";
 import ProfilePic from './Profile'
 
 
@@ -21,9 +21,9 @@ export default function Rightbar({ posts = [], onDelete, onEdit }) {
             try {
                 let url = '/api/posts';
 
-                // Append search query if it exists
+                
                 if (searchQuery.trim() !== '') {
-                    url += `?search=${encodeURIComponent(searchQuery.trim())}`;
+                    url += `https://node-app-backend-1.onrender.com?search=${encodeURIComponent(searchQuery.trim())}`;
                 }
 
                 const response = await fetch(url);
@@ -51,7 +51,7 @@ export default function Rightbar({ posts = [], onDelete, onEdit }) {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch(`/${process.env.REACT_APP_API_URL}/api/posts?sort=likes`); 
+                const response = await fetch(`https://node-app-backend-1.onrender.com/api/posts?sort=likes`); 
                 const json = await response.json();
                 if (response.ok) {
                     setTrendingPosts(json);
@@ -69,7 +69,7 @@ export default function Rightbar({ posts = [], onDelete, onEdit }) {
     React.useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch(`/${process.env.REACT_APP_API_URL}/api/posts`);
+                const response = await fetch(`https://node-app-backend-1.onrender.com/api/posts`);
                 const json = await response.json(); 
                 if (response.ok) { 
                   setTrendingPosts(json)
@@ -116,8 +116,9 @@ export default function Rightbar({ posts = [], onDelete, onEdit }) {
                         onChange={handleSearchChange}
                     />
                 </form>
+               
+                <div className="trending-posts">
                 <h5>Trending Posts</h5>
-                <div className="trending-post">
                     
                     {trendingPosts.length > 0 ? (
                         <ul>

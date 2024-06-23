@@ -2,19 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import "./style.css"
-import { PostContextProvider } from './context/postContext';
-import { AuthProvider } from './context/authContext';
-
+import { AppContextProvider } from './context/appContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    <PostContextProvider>
-     <AuthProvider>
+    <AppContextProvider>
      <App />
-     </AuthProvider>
-   
-    </PostContextProvider>
+
+    </AppContextProvider>
     
   
 );

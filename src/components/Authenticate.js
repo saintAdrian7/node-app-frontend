@@ -1,6 +1,7 @@
 import React from "react"
 import "./Authenticate.css"
 
+
 export default function Authenticate({setIsLoggedIn}){
 const [email,setEmail] = React.useState('')
 const [password,setPassword] = React.useState('')
@@ -27,7 +28,7 @@ async function handleSubmit(event){
                 }else{
                     
                       try {
-                        const response = await fetch(`/${process.env.REACT_APP_API_URL}/api/auth/signUp}`, {
+                        const response = await fetch(`https://node-app-backend-1.onrender.com/api/auth/signUp`, {
                           method: 'POST',
                           headers: { 
                             'Content-Type': 'application/json' },
@@ -38,6 +39,7 @@ async function handleSubmit(event){
                           }),
                         });
                         const data = await response.json();
+                        console.log(data)
                         if (response.ok) {
                           localStorage.setItem('user', JSON.stringify(data));
                           setEmail('');
@@ -45,20 +47,19 @@ async function handleSubmit(event){
                           setConfirmPassword('');
                           setError('');
                           setIsLoggedIn(true);
-                          console.log(data)
                         } else {
-                          setError(data.message);
+                          setError(data.msg);
                         }
                     }
                     
                     catch(err){
-                      setError('Server error. Please try again later.')
+                      setError(err)
                     }
                 }
                 
         }else{
           try {
-            const response = await fetch(`/${process.env.REACT_APP_API_URL}/api/auth/login}`, {
+            const response = await fetch('https://node-app-backend-1.onrender.com/api/auth/login', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
@@ -67,6 +68,7 @@ async function handleSubmit(event){
             }),
             });
             const data = await response.json();
+            console.log(data)
             if (response.ok) {
               localStorage.setItem('user', JSON.stringify(data));
               setEmail('');
@@ -74,11 +76,12 @@ async function handleSubmit(event){
               setError('');
               setIsLoggedIn(true);
             } else {
-              setError(data.message);
+              setError(data.msg);
             }
 
           } catch (err) {
-            setError('Server error. Please try again later.');
+            console.log(err)
+            setError(err);
           }
         }
         }

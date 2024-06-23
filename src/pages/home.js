@@ -3,19 +3,19 @@ import Sidebar from "../components/Sidebar";
 import Nav from "../components/Nav";
 import Rightbar from "../components/Rightbar";
 import BlogPost from '../components/BlogPost';
-import { usePostContext } from "../Hooks/usePostContext";
+import { useAppContext } from "../Hooks/useAppContext";
+
 
 export default function Home({setIsCreate}) {
-  const { posts, dispatch } = usePostContext();
+  const { posts, dispatch } = useAppContext();
 
   React.useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts}`);
+        const response = await fetch(`/api/posts`);
         const json = await response.json(); 
         if (response.ok) { 
           dispatch({ type: 'SET_POSTS', payload: json });
-          console.log(json);
         } else {
           console.error('Failed to fetch posts', json);
         }

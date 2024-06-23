@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CircleProfilePic = ({ username }) => {
-  // Function to extract the first letter of the username
   const getInitials = (username) => {
     return username.charAt(0).toUpperCase();
   };
@@ -16,8 +15,8 @@ const CircleProfilePic = ({ username }) => {
 
 
 const StyledProfilePic = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background-color: #bdbdbd;
   border-radius: 50%;
   display: flex;
@@ -26,6 +25,7 @@ const StyledProfilePic = styled.div`
   font-size: 24px;
   font-weight: bold;
   color: #fff;
+  margin-left:10px;
 `;
 
 export default CircleProfilePic;

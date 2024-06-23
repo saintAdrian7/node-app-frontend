@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { PostContext } from "../context/postContext";
+import { AppContext } from "../context/appContext";
 
-export function usePostContext() {
-    const context = useContext(PostContext);
+export function useAppContext() {
+    const context = useContext(AppContext);
     if (!context) {
         throw new Error('usePostContext must be used within a PostContextProvider');
     }

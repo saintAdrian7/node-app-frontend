@@ -54,7 +54,7 @@ export default function Sidebar({ setIsCreate, handleLogout }) {
                     <FaPlusCircle style={{ marginRight: '10px' }} />
                     Create
                 </button>
-                <button className={styles.navItem} onClick={handleLogout}>
+                <button className="logout-btn" onClick={handleLogout}>
                     Log out
                 </button>
             </div>

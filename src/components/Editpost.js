@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./WriteBlogForm.css";
-import { usePostContext } from "../Hooks/usePostContext";
+import { usePostContext } from "../Hooks/useAppContext";
 
 export default function WriteBlogForm({ setIsCreate }) {
   const [title, setTitle] = useState('');
@@ -9,7 +9,7 @@ export default function WriteBlogForm({ setIsCreate }) {
 const [message, setMessage] = useState('')
 
   useEffect(() => {
-    // Load drafts from localStorage on component mount
+  
     const myDrafts = localStorage.getItem('drafts');
     const parsedDrafts = JSON.parse(myDrafts);
     if (parsedDrafts && parsedDrafts.length > 0) {
@@ -22,7 +22,7 @@ const [message, setMessage] = useState('')
     const newDraft = {
       title,
       content,
-      date: new Date().toISOString() // Adding date to the draft
+      date: new Date().toISOString() 
     };
     const updatedDrafts = [...drafts, newDraft];
     setDrafts(updatedDrafts);
@@ -68,7 +68,7 @@ const [message, setMessage] = useState('')
   };
 
   try {
-    const response = await fetch('/api/posts', {
+    const response = await fetch('https://node-app-backend-1.onrender.com/api/posts', {
       method: "POST",
       body: JSON.stringify(newPost),
       headers: {
@@ -78,7 +78,6 @@ const [message, setMessage] = useState('')
     });
 
     if (!response.ok) {
-    // Handle non-OK responses
       const errorText = await response.text();
       console.error('Error response:', errorText);
       alert('Failed to create post. Check the console for details.');
