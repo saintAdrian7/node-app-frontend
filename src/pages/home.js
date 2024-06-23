@@ -12,7 +12,7 @@ export default function Home({setIsCreate}) {
   React.useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch(`/api/posts`);
+        const response = await fetch(`https://node-app-backend.onrender.com/api/posts`);
         const json = await response.json(); 
         if (response.ok) { 
           dispatch({ type: 'SET_POSTS', payload: json });
